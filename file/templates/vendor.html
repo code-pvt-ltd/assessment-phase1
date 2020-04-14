@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>AI Assessment Tool</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        
+        <link rel="stylesheet" type="text/css" href="/static/css/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/css/animate-custom.css" />
+        <style>
+            .row{
+                margin: 1% 0%; 
+                width: 100%;
+                display: inline-flex;
+                }
+            .col-25 {
+                width: 34%;
+                margin-top: 6px;
+             }
+            .col-75 {
+            width: 66%;
+            margin-top: 6px;
+            }
+			#wrapper input[type=checkbox]{
+			width:12px;
+			}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+           
+            <header>
+                <h1>Vendor Registration  </h1>
+                <span>Welcome username</span>
+            </header>
+            <section>				
+                <div id="container_demo" >
+                   
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  autocomplete="on" method="POST">
+								 {% csrf_token %}
+                                <h1>Vendor Registration Form</h1> 
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="order" class="order" >Is order placed through GEM? </label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="order" name="order" value="yes" required="required" type="radio" />Yes
+                                        <input id="order" name="order" value="no" required="required" type="radio" />No
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="gemorderno" class="gemorderno" >Please fill GEM order number</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="gemorderno" name="gemorderno" required="required" type="number" placeholder="GEM order number" /> 
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="oredrno" class="oredrno" >Purchase Order No. </label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="oredrno" name="oredrno" required="required" type="number" placeholder="Order No" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="enrollment" class="enrollment" >Enrollment for which package </label>
+                                    </div>
+                                   <div class="col-75">
+                                        <input id="p1" name="package" type="checkbox" />P1
+                                    
+                                        <input id="p2" name="package" type="checkbox" />P2
+                                    
+                                        <input id="p3" name="package" type="checkbox" />P3
+                                    
+                                        <input id="p4" name="package" type="checkbox" />P4 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label for="company" class="company" ><b>Company Details</b></label>
+                                </div>
+								<div class="row">
+                                    <div class="col-25">
+									<label for="comname" class="comname" >Company Name</label>
+									</div>									
+                                    <div class="col-75">
+                                        <input id="comname" name="comname" required="required" type="text" placeholder="Company Name" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+									<label for="incorporationID" class="incorporationID" >Company Incorporation ID</label>
+									</div>									
+                                    <div class="col-75">
+                                        <input id="incorporationID" name="incorporationID" required="required" type="text" placeholder="Company Incorporation ID" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="address" class="address" >Address</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="address" name="address" required="required" type="text" placeholder="Address" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="contact" class="contact" >Contact Number</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="contact" name="contact" required="required" type="number" placeholder="Contact Number" /> 
+                                    </div>
+                                </div>
+								 <div class="row">
+                                    <div class="col-25">
+                                        <label for="email" class="email" >Email ID</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="email" name="email" required="required" type="text" placeholder="Email ID" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label for="personincharge" class="personincharge" ><b>Person Incharge Details</b></label>
+                                </div>
+								<div class="row">
+                                    <div class="col-25">
+									<label for="name" class="name" >Name</label>
+									</div>									
+                                    <div class="col-75">
+                                        <input id="name" name="name" required="required" type="text" placeholder=" Name" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+									<label for="contactno" class="contactno" >Contact Number</label>
+									</div>									
+                                    <div class="col-75">
+                                        <input id="contactno" name="contactno" required="required" type="number" placeholder="Contact Number" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="email1" class="email1" >Email ID</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="email1" name="email1" required="required" type="text" placeholder="Email ID" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="more" class="more" >Do you want to add more teachear details</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="more" name="more" value="yes" required="required" type="radio" />Yes
+                                        <input id="more" name="more" value="no" required="required" type="radio" />No
+                                    </div>
+                                </div>
+
+                                <footer >                  
+                                    <p class="login button"><input type="Submit" value="Submit" /> </p>
+                                   <p class="login button"><a href="schoolreg.html"><input type="button" value="Cancel"  /></a> </p>
+                            </footer>
+                           
+                        </form>
+                        </div>         
+                    </div>
+                </div>
+            </section> 
+     
+        </div>
+        <script>
+            function save(){
+                alert("Data saved");
+                var option=document.getElementsByName("more");
+                if(option.value == 'yes')
+                    {
+                       <!--  location.replace('vendor.html'); -->
+                    }
+                else
+                    {
+                        <!-- location.replace('schoolreg.html'); -->
+                    }
+               
+            }
+        </script>
+    </body>
+</html>

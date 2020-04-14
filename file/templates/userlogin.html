@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AI Assessment Tool</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="/static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="/static/css/style.css" rel="stylesheet">
+<style>
+  .btn-get-started1{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 1px;
+    display: block;
+    padding: 15px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 15px;
+    color: #fff;
+    background: rgb(106, 159, 171);
+  }
+  .btn-get-started1:hover{
+    color:#18d26e ;
+    background-color: white;
+  }
+  .modal1 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  width: 100%;
+  top: 15%;
+  overflow: auto; /* Enable scroll if needed */
+  color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content1 {
+  max-width: 504px;
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 93%; /* Could be more or less, depending on screen size */
+}
+/* The Close Button (x) */
+.close {
+
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+span{
+
+    font-size: 24px;
+    margin-left: -85px;
+}
+.imgcontainer{
+
+    background: rgb(106, 159, 171);
+    color: white;
+    padding: 10px;
+
+}
+.row1{
+    margin: 5% 3%;
+    display:inline-flex;
+}
+.col-40{
+   width: 35%;
+}
+.col-60{
+  width: 67%;
+  margin-left: 2px;
+}
+input[type=submit]{
+  border: 0px;
+    border-radius: 25px;
+    font-size: 17px;
+    font-weight: 600;
+    background: #bdbdbd;
+    margin: 10px;
+    padding: 9px 22px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="#intro" class="scrollto">School Registration</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <!--<ol class="carousel-indicators"></ol>-->
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active">
+            <div class="carousel-background"><img src="img/intro-carousel/2.jpg" alt=""></div>
+            <div class="carousel-container">
+              <h3 class="select">Select any one option</h3> <br>
+              <div class="carousel-content">
+                <a onclick="atl()" href="#featured-services" class="btn-get-started1 scrollto">ATL</a><br/>
+                <a onclick="cbse()" href="#featured-services" class="btn-get-started1 scrollto">CBSE</a><br/>
+
+                <div id="id01" class="modal1">
+                  <form class="modal-content1 animate" method="POST" <!--action="{% url 'file:userlogin' %}"-->>
+					{% csrf_token %}
+                    <div class="imgcontainer">
+                      <span> ATL Login Form</span>
+                      <span onclick="close01()" class="close" title="Close Modal">&times;</span>
+                    </div>
+                      <div class="row1">
+                        <div class="col-40">
+                            <label for="name"><b>Email or number</b></label>
+                        </div>
+                        <div class="col-60">
+                python manage.py          <input type="text" placeholder="Enter Email or number" name="Mobilenumber" required>
+                        </div>
+                    </div><br>
+                    <div class="row1">
+                      <div class="col-40">
+                          <label for="name"><b>Password</b></label>
+                      </div>
+                      <div class="col-60">
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                      </div>
+                    </div><br>
+                    <input type="submit" id="submit1" value="Login" >
+                  </form>
+                </div>
+
+                <div id="id02" class="modal1">
+                  <form class="modal-content1 animate" method="POST">
+                    <div class="imgcontainer">
+                      <span> CBSE Login Form</span>
+                      <span onclick="close01()" class="close" title="Close Modal">&times;</span>
+                    </div>
+                      <div class="row1">
+                        <div class="col-40">
+                            <label for="name"><b>CBSE Login ID</b></label>
+                        </div>
+                        <div class="col-60">
+                          <input type="text" placeholder="Enter Login ID" name="login_id" required>
+                        </div>
+                    </div><br>
+                    <div class="row1">
+                      <div class="col-40">
+                          <label for="name"><b>Password</b></label>
+                      </div>
+                      <div class="col-60">
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                      </div>
+                    </div><br>
+                    <input type="submit"  value="Login" id="submit2" onclick="next1()">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- #intro -->
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>ATL Lab</h3>
+            <p>ALT, which stands for alanine transaminase, is an enzyme found mostly in the liver. An ALT test measures the amount of ALT in the blood. High levels of ALT in the blood can indicate a liver problem, even before you have signs of liver disease,
+               such as jaundice, a condition that causes your skin and eyes to turn yellow.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              303 MoolChand Tower Khasra No 587<br>
+              Shiv mandir, Sector 22<br>
+              Noida, Uttar Pradesh 201301<br>
+              Phone: +91 098702 43305<br>
+              Email: humanresource@codeglobal.in <br>
+              <strong>Phone:</strong> +91 9098042511<br>
+              <strong>Email:</strong> humanresource@codeglobal.in<br>
+            </p>
+          </div>
+            <div class="col-lg-3 col-md-6 footer-info">
+              <h4>Social Links</h4>
+              <div class="social-links">
+                <a href="http://www.twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="http://www.facebook.com" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="http://www.instagram.com" class="instagram"><i class="fa fa-instagram"></i></a>
+                <a href="http://www.googl-plus.com" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                <a href="http://www.linkedin.com" class="linkedin"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>CODE</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage-->
+
+        Developed & Designed by <a href="#">CODE</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!-- JavaScript Libraries -->
+  <script src="/static/lib/jquery/jquery.min.js"></script>
+  <script src="/static/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="/static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/lib/easing/easing.min.js"></script>
+  <script src="/static/lib/superfish/hoverIntent.js"></script>
+  <script src="/static/lib/superfish/superfish.min.js"></script>
+  <script src="/static/lib/wow/wow.min.js"></script>
+  <script src="/static/lib/waypoints/waypoints.min.js"></script>
+  <script src="/static/lib/counterup/counterup.min.js"></script>
+  <script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="/static/lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="/static/lib/lightbox/js/lightbox.min.js"></script>
+  <script src="/static/lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="/static/contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="/static/js/main.js"></script>
+<script>
+
+function atl()
+{
+  document.getElementById('id01').style.display='block';
+  document.getElementById('header').style.display ='none';
+}
+function cbse()
+{
+  document.getElementById('id02').style.display='block';
+  document.getElementById('header').style.display ='none';
+}
+function close01()
+{
+  document.getElementById('id01').style.display='none';
+  document.getElementById('id02').style.display='none';
+  document.getElementById('header').style.display ='block';
+}
+function nextSP()
+{
+	alert("helloworld")
+  /*location.href="/schoolreg/";*/
+}
+function next1()
+{
+  location.replace("schoolreg.html");
+}
+</script>
+</body>
+</html>

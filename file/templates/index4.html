@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>Login and Registration Form with HTML5 and CSS3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="/static/css/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/css/style4.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/css/animate-custom.css" />
+      <style>
+        .row{
+            margin: 1% 0%; 
+            width: 100%;
+            display: inline-flex;
+            }
+        .col-25 {
+            width: 34%;
+            margin-top: 6px;
+         }
+        .col-75 {
+        width: 66%;
+        margin-top: 6px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+               
+            <header>
+                <h1>School ATL Incharge </h1>
+                <span>Welcome username</span>
+                <nav class="codrops-demos">
+                    
+                    <a href="{% url 'file:schoolatlinchargeweb' %}" ><br>School Details for ATL Incharge</a>
+                    <a href="{% url 'file:schoolatlinchargeweb' %}" ><br>School ATL Incharge Information</a>
+                    <a href="{% url 'file:AESWeb' %}" ><br>ATL Establishment Status</a>
+                    <a href="{% url 'file:TNFA'%}" class="current-demo"><br>Teacher Nomination Details</a>
+                </nav>
+            </header>
+            <section>				
+                <div id="container_demo" >
+                    
+                    
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  autocomplete="on" method="POST"> 
+                                {% csrf_token %}
+                                <h1>Teacher Nomination Details</h1> 
+
+                                
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="name" class="name" >1. Name </label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="name" name="name" required="required" type="text" placeholder="Name" /> 
+                                    </div>
+                                </div>
+                               
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="number" class="number" >2. Contact Number</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="number" name="number" required="required" type="text" placeholder="Number" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="email" class="email" >3. Email ID</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="email" name="email" required="required" type="text" placeholder="Email ID" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="more" class="more" >4. Do you want to add more teacher details? </label>
+                                    </div>
+                                    <div class="col-75">
+                                        &nbsp;&nbsp;&nbsp; <input id="option2" name="option2" value="yes" type="radio" />Yes
+                                        &nbsp;&nbsp;&nbsp; <input id="option2" name="option2" value="no" type="radio" />No                                   
+                                    </div>
+                                </div>
+                                <footer >                  
+                                    <p class="login button"><input type="submit" value="Submit" name="submit" class="login"/> </p>
+                                    <p class="login button"><a href="{% url 'file:AESWeb'%}"><input type="button" value="Previous"  /></a> </p>
+                                     
+                                    <p class="login button"><a href="{% url 'file:schoolreg'%}"><input type="button" value="Cancel"  /></a> </p>
+                            </footer>
+                            </form>
+                        </div>         
+                    </div>
+                </div>  
+            </section>       
+        </div>
+    </body>
+</html>

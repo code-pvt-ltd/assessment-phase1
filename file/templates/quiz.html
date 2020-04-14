@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question Round</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+       
+        <link rel="stylesheet" type="text/css" href="../static/css/demo01.css" />
+        <link rel="stylesheet" type="text/css" href="../static/css/style01.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/animate-custom.css" />
+
+    </head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><br>Artificial Intelligence Assessment Tool<br></h1>  
+        </header>
+        <section>
+            <div id="container_demo">
+                <a class="hiddenanchor" id="toquestion1"></a>
+                <a class="hiddenanchor" id="toquestion2"></a>
+                <a class="hiddenanchor" id="toquestion3"></a>
+                <a class="hiddenanchor" id="toquestion4"></a>
+                <a class="hiddenanchor" id="toquestion5"></a>
+                <a class="hiddenanchor" id="toquestion6"></a>
+                <a class="hiddenanchor" id="toquestion7"></a>
+                <a class="hiddenanchor" id="toquestion8"></a>
+
+                <div id="wrapper">
+                    <div id="question1" class="animate form">
+                        <form method="POST">
+                            <h1>Question 1</h1>
+                            <label for="question" class="question">
+                                {{context.obj1.question}}
+                            </label><br>
+                            <input type="radio" name="option" value={{context.obj1.option1}}>{{context.obj1.option1}}<br>
+                            <input type="radio" name="option" value={{context.obj1.option2}}>{{context.obj1.option2}}<br>
+                            <input type="radio" name="option" value={{context.obj1.option3}}>{{context.obj1.option3}}<br>
+                            <input type="radio" name="option" value={{context.obj1.option4}}>{{context.obj1.option4}}<br>
+                            <p class="change_link"> 
+                                <a href="" class="to_register" id="q1" onclick="save1()">Submit</a>
+                                <a href="#toquestion2" class="to_register" onclick="skip1()">Skip</a>
+                            </p>
+                        </form>
+                    </div>
+                    <div id="question2" class="animate form">
+                        <form method="POST"> 
+                            <h1> Question 2</h1> 
+                            <label for="question" class="question">
+                                {{context.obj2.question}}
+                            </label><br>
+                            <input type="radio" name="option1" value={{context.obj2.option1}}>{{context.obj2.option1}}<br>
+                            <input type="radio" name="option1" value={{context.obj2.option2}}>{{context.obj2.option2}}<br>
+                            <input type="radio" name="option1" value={{context.obj2.option3}}>{{context.obj2.option3}}<br>
+                            <input type="radio" name="option1" value={{context.obj2.option4}}>{{context.obj2.option4}}<br>   
+                            <p class="change_link">  
+                                <a href="#toquestion1" class="to_register" onclick="pre1()" >Previous</a>
+                                <a href="" id="q2" class="to_register" onclick="save2()">Submit</a>
+                                <a href="#toquestion3" class="to_register" onclick="skip2()">Skip</a>
+                            </p>
+                        </form>
+                    </div>
+                    <div id="question3" class="animate form">
+                        <form method="POST">
+                            <h1>Question 3</h1>
+                            <label for="question" class="question">
+                                {{context.obj3.question}}
+                            </label><br>
+                            <input type="radio" name="option2" value={{context.obj3.option1}}>{{context.obj3.option1}}<br>
+                            <input type="radio" name="option2" value={{context.obj3.option2}}>{{context.obj3.option2}}<br>
+                            <input type="radio" name="option2" value={{context.obj3.option3}}>{{context.obj3.option3}}<br>
+                            <input type="radio" name="option2" value={{context.obj3.option4}}>{{context.obj3.option4}}<br>
+                            <p class="change_link"> 
+                                <a href="#toquestion2" class="to_register" onclick="pre2()">Previous</a>
+                                <a href="" id="q3" class="to_register" onclick="save3()">Submit</a>
+                                <a href="#toquestion4" class="to_register" onclick="skip3()">Skip</a>
+                            </p>
+                        </form>
+                    </div>
+                    <div id="question4" class="animate form">
+                        <form method="POST">
+                            <h1>Question 4</h1>
+                            <label for="question" class="question">
+                                {{context.obj4.question}}
+                            </label><br>
+                            <input type="radio" name="option3" value={{context.obj4.option1}}>{{context.obj4.option1}}<br>
+                            <input type="radio" name="option3" value={{context.obj4.option2}}>{{context.obj4.option2}}<br>
+                            <input type="radio" name="option3" value={{context.obj4.option3}}>{{context.obj4.option3}}<br>
+                            <input type="radio" name="option3" value={{context.obj4.option4}}>{{context.obj4.option4}}<br>
+                            <p class="change_link"> 
+                                <a href="#toquestion3" class="to_register" onclick="pre3()">Previous</a>
+                                <a href="" id="q4" class="to_register" onclick="save4()">Submit</a>
+                                <a href="#toquestion5" class="to_register" onclick="skip4()">Skip</a>
+                            </p>
+                        </form>
+                    </div>
+                    <div id="question5" class="animate form">
+                        <form method="POST">
+                            <h1>Question 5</h1>
+                            <label for="question" class="question">
+                                {{context.obj5.question}}
+                            </label><br>
+                            <input type="radio" name="option4" value={{context.obj5.option1}}>{{context.obj5.option1}}<br>
+                            <input type="radio" name="option4" value={{context.obj5.option2}}>{{context.obj5.option2}}<br>
+                            <input type="radio" name="option4" value={{context.obj5.option3}}>{{context.obj5.option3}}<br>
+                            <input type="radio" name="option4" value={{context.obj5.option4}}>{{context.obj5.option4}}<br>
+                            <p class="change_link"> 
+                                <a href="#toquestion4" class="to_register" onclick="pre4()">Previous</a>
+                                <a href="" id="q5" class="to_register" onclick="save5()">Submit</a>
+                                <a href="#toquestion6" class="to_register" onclick="skip5()">Skip</a>
+                            </p>
+                        </form>
+                    </div>
+                    <div id="question6" class="animate form">
+                        <form method="POST">
+                            <h1>Completed AI Assessment</h1><br>
+                            <label for="question" class="question">
+                                What action you want to perform?
+                            </label><br><br><br>
+                            <p class="change_link"> 
+                                <a href="#toquestion7" class="to_register">REVIEW</a>
+                                <a href="#toquestion8" class="to_register">COMPLETE</a>
+                            </p>
+                        </form>
+                    </div>
+                    <div id="question7" class="animate form">
+                        <form method="POST">
+                            <p id="p1"></p>
+                            <p id="p2"></p>
+                            <p id="p3"></p>
+                            <p id="p4"></p>
+                            <p id="p5"></p>
+                            <p class="change_link"> 
+                                <a href="#toquestion8" class="to_register" onclick="grade()">COMPLETE</a>
+                            </p>
+                        </form>
+                    </div>
+
+                    <div id="question8"  class="animate form">
+                        <form method="POST">
+                            <h1>Assessment Report</h1>
+                            <p>Dear USER<br><br>
+                            Congratulation!!! You have completed your Artificial Intelligence Assessment</p><br><br><br>
+                            <p id="score">Score board - </p><br><br>
+                            <p class="change_link"> 
+                                <a href="" class="to_register">Please Download your Certificate</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        
+        correct = 0;
+        incorrect = 0;
+
+        function save1()
+        { 
+            var ans=document.getElementsByName("option");
+           for(i=0;i<ans.length;i++)
+           { 
+               if(ans[i].checked==true)
+               {
+                   x=ans[i].value;
+                   if(x=="1991")
+                   {   
+                       correct = correct+1;
+                       document.getElementById("q1").href = "#toquestion2";
+                       document.getElementById("p1").innerHTML = "Q1. Attempted";
+                   }
+               else
+                   {
+                       document.getElementById("q1").href = "#toquestion2";
+                       document.getElementById("p1").innerHTML = "Q1. Attempted";
+                       incorrect = incorrect+1;        
+                    } 
+                }
+
+            }
+            document.getElementById("question1").style.opacity = 0;  
+        }
+
+        function skip1()
+        {
+            document.getElementById("question1").style.opacity = 0;
+            var a = document.createElement('a');
+            var link = document.createTextNode("Click here to attempt");
+            a.appendChild(link);
+            a.href = "#toquestion1";
+            a.title = "Q1. Unattempted";
+            document.getElementById("p1").innerHTML = "Q1. Unattempted";
+            document.getElementById("p1").appendChild(a);
+        }
+        function pre1()
+        {
+            document.getElementById("question1").style.opacity = 1;
+            var option = document.getElementsByName("option");
+            for(i=0;i<=3;i++)
+            {
+                option[i].checked = false;
+            }     
+        }
+
+
+        function save2()
+            {   
+                var ans=document.getElementsByName("option1");
+                for(i=0;i<ans.length;i++)
+                { 
+                    if(ans[i].checked==true)
+                    {
+                        x=ans[i].value;
+                        if(x=="Guido")
+                        {       
+                            correct = correct+1;
+                            document.getElementById("q2").href = "#toquestion3";
+                            document.getElementById("p2").innerHTML = "Q2. Attempted";
+                            
+                        }
+                        else 
+                        {  
+                            document.getElementById("q2").href = "#toquestion3";
+                            document.getElementById("p2").innerHTML = "Q2. Attempted";
+                            incorrect = incorrect+1;    
+                        }
+                    }
+                } 
+            }
+        function pre2()
+        {
+            var option = document.getElementsByName("option1");
+            for(i=0;i<=3;i++)
+            {
+                option[i].checked = false;
+            }     
+        }
+
+        function skip2(){
+            var a = document.createElement('a');
+            var link = document.createTextNode("Click here to attempt");
+            a.appendChild(link);
+            a.href = "#toquestion2";
+            a.title = "Q2. Unattempted"
+            document.getElementById("p2").innerHTML = "Q2. Unattempted";
+            document.getElementById("p2").appendChild(a);
+        }   
+
+        function save3()
+        {   
+            var ans=document.getElementsByName("option2");
+            for(i=0;i<ans.length;i++)
+            { 
+                if(ans[i].checked==true)
+                {
+                    x=ans[i].value;
+                    if(x=="exit")
+                    {  
+                        correct = correct+1;
+                        document.getElementById("q3").href = "#toquestion4";
+                        document.getElementById("p3").innerHTML = "Q3. Attempted";
+                    
+                    }
+                    else{   
+                        document.getElementById("q3").href = "#toquestion4";
+                        document.getElementById("p3").innerHTML = "Q3. Attempted";
+                        incorrect = incorrect+1;    
+                    }
+                }
+            }  
+        }
+  
+        function pre3()
+        {
+            var option = document.getElementsByName("option2");
+            for(i=0;i<=3;i++)
+            {
+                option[i].checked = false;
+            }     
+        }
+
+        function skip3(){
+            var a = document.createElement('a');
+            var link = document.createTextNode("Click here to attempt");
+            a.appendChild(link);
+            a.href = "#toquestion3";
+            a.title = "Q3. Unattempted"
+            document.getElementById("p3").innerHTML = "Q3. Unattempted";
+            document.getElementById("p3").appendChild(a);
+        }
+
+
+        function save4()
+        {       
+            var ans=document.getElementsByName("option3");
+            for(i=0;i<ans.length;i++)
+            { 
+                if(ans[i].checked==true)
+                {
+                    x=ans[i].value;
+                    if(x=="Making")
+                    {
+                        correct = correct+1;
+                        document.getElementById("q4").href = "#toquestion5";
+                        document.getElementById("p4").innerHTML = "Q4. Attempted";
+                    }
+                    else{  
+                        document.getElementById("q4").href = "#toquestion5";
+                        document.getElementById("p4").innerHTML = "Q4. Attempted";
+                        incorrect = incorrect+1;
+                    }
+                }
+            }
+        }
+        function pre4()
+        {
+            var option = document.getElementsByName("option3");
+            for(i=0;i<=3;i++)
+            {
+                option[i].checked = false;
+            }     
+        }
+
+        function skip4(){
+            var a = document.createElement('a');
+            var link = document.createTextNode("Click here to attempt");
+            a.appendChild(link);
+            a.href = "#toquestion4";
+            a.title = "Q4. Unattempted"
+            document.getElementById("p4").innerHTML = "Q4. Unattempted";
+            document.getElementById("p4").appendChild(a);
+        }
+        function save5()
+        {      
+            var ans=document.getElementsByName("option4");
+            for(i=0;i<ans.length;i++)
+            { 
+                if(ans[i].checked==true)
+                {
+                    x=ans[i].value;
+                    if(x=="All")
+                    {
+                        correct = correct+1;
+                        document.getElementById("q5").href = "#toquestion6";
+                        document.getElementById("p5").innerHTML = "Q5. Attempted";
+                    }
+                    else{  
+                        document.getElementById("q5").href = "#toquestion6";
+                        document.getElementById("p5").innerHTML = "Q5. Attempted";
+                        incorrect = incorrect+1;
+                    }
+                }
+            }
+        }
+        function skip5(){
+            var a = document.createElement('a');
+            var link = document.createTextNode("Click here to attempt");
+            a.appendChild(link);
+            a.href = "#toquestion5";
+            a.title = "Q5. Unattempted"
+            document.getElementById("p5").innerHTML = "Q5. Unattempted";
+            document.getElementById("p5").appendChild(a);
+        }
+
+       
+        function grade()
+        {
+            marks = correct*20;
+            percent = marks*(100/100);
+            if(percent<=100 && percent>80)
+            {
+                document.getElementById("score").innerHTML = "Score board = Grade A";
+            }
+            else if(percent<=80 && percent>60)
+            {
+                document.getElementById("score").innerHTML = "Score board = Grade B";
+            }
+            else if(percent<=60 && percent>40)
+            {
+                document.getElementById("score").innerHTML = "Score board = Grade C";
+            }
+            else
+            {
+                document.getElementById("score").innerHTML = "Score board = Grade D";
+            }
+        }
+    </script>
+</body>
+</html>

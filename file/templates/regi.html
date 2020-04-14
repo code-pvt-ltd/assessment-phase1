@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>AI Assessment Tool</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        
+        <link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/animate-custom.css" />
+        <style>
+            .row{
+                margin: 1% 0%; 
+                width: 100%;
+                display: inline-flex;
+				align-items: center;
+                }
+            .col-25 {
+                width: 34%;
+                margin-top: 6px;
+             }
+            .col-75 {
+            width: 66%;
+            margin-top: 6px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+           
+            <header>
+                <h1>Lab Package Resistration </h1>
+                <span>Welcome username</span><br>
+				<nav class="codrops-demos">
+					
+					<a href="{% url 'file:Package1' %}" class="current-demo"><br>Package 1</a>
+					<a href="{% url 'file:Package2' %}"><br>Package 2</a>
+                    <a href="{% url 'file:Package3' %}"><br>Package 3</a>
+                    <a href="{% url 'file:Package4' %}"><br>Package 4</a>
+				</nav>
+            </header>
+            <section>				
+                <div id="container_demo" >
+                    
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <h1>Package1</h1>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="list" class="list" >Electronic list of component </label>
+                                    </div>
+                                    <div class="col-75">
+                                        <select id="sel"name="sel"required>
+
+										<option value="Component List 1">Component List 1</option>
+										<option value="Component List 2">Component List 2</option>
+										<option value="Component List 3">Component List 3</option>
+										<option value="Component List 4">Component List 4</option>
+										<option value="Component List 5">Component List 5</option>
+										</select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="other" class="other" >Other Offerings Please specify</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="other" name="other" required="required" type="text" placeholder="Please specify" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <label for="address" class="address" > <b><i>Is training included with the packages</i></b></label><br><br>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="scope" class="scope" >Scope of training </label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="scope" name="scope" required="required" type="text" placeholder="Scope of training" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="days" class="days" >No of days of training</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="days" name="days" required="required" type="text" placeholder="No of days" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="who" class="who" >Who attended training</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="who" name="who" required="required" type="text" placeholder="Who attended" /> 
+                                    </div>
+                                </div>
+                                
+                                <footer >                  
+                                    <p class="login button"><input type="submit" value="Save" name="submit" class="login" onsubmit="save()"/> </p>
+                                   <p class="login button"><a href="{% url 'file:Package2' %}"><input type="button" value="Next"  />
+                                   </a> </p>
+                                   <p class="login button"><a href="{% url 'file:Package1' %}"><input type="button" value="Cancel"  /></a> </p>
+                            </footer>
+                            </form>
+                        </div>         
+                    </div>
+                </div>  
+            </section>       
+        </div>
+        <script>
+            function save(){
+                alert("Data saved successfully")
+            }
+        </script>
+    </body>
+</html>

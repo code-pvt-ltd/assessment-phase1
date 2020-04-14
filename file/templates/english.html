@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question Round</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+       
+        <link rel="stylesheet" type="text/css" href="css/que_css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/que_css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/que_css/animate-custom.css" />
+</head>
+<body>
+    <div class="container">
+        <header style="width: 74%;">
+            <h1>Student Online Test</h1>    
+        </header>
+        <section>
+            <div id="container_demo" >
+                <a class="hiddenanchor" id="toquestion1"></a>
+                <a class="hiddenanchor" id="toquestion2"></a>
+                <a class="hiddenanchor" id="toquestion3"></a>
+                <a class="hiddenanchor" id="toquestion4"></a>
+                <a class="hiddenanchor" id="toquestion5"></a>
+                <a class="hiddenanchor" id="toquestion6"></a>
+                <a class="hiddenanchor" id="toquestion7"></a>
+                <a class="hiddenanchor" id="toquestion8"></a>
+                <a class="hiddenanchor" id="toquestion9"></a>
+                <a class="hiddenanchor" id="toquestion10"></a>
+                  
+                <div id="wrapper">
+                    <div id="question1" class="animate form">
+
+                        <form action="" autocomplete="on">
+                            <h1>Question 1</h1>
+                            <p>Which device can be used to store charge?</p>
+                            
+                            <br class="radios">
+                             <input type="radio" name="option" value="Transistor">Transistor</br></br>
+                             <input type="radio" name="option" value="Diode">Diode</br></br>
+                             <input type="radio" name="option" value="Capacitor">Capacitor</br></br>
+                             <input type="radio" name="option" value="Resistor">Resistor</br></br>              
+                             <p class="change_link">								
+                                <a  href="" class="to_register" onclick="submit1()" id="q1">SUBMIT</a>
+                                <a href="#toquestion1" class="to_register" >SKIP</a>										
+                            </p>
+                        </form>
+                       
+                           
+                    </div>
+                    <div id="question2" class="animate form">
+                        <form action="" autocomplete="on">
+                            <h1>Question 2</h1> 
+                            <p>Blue is what number on the resistor color code?</p>
+                            
+                            <br class="radios">
+                             <input type="radio" name="option" value="4">4</br></br>
+                             <input type="radio" name="option" value="1">1</br></br>
+                             <input type="radio" name="option" value="2">2</br></br>
+                             <input type="radio" name="option" value="6">6</br></br>              
+                             <p class="change_link">
+                                <a href="#" class="to_register" onclick="back2()">BACK</a>								
+                                <a  href="" class="to_register" onclick="submit2()" id="q2">SUBMIT</a>
+                                <a href="#toquestion2" class="to_register" >SKIP</a>	
+                                
+                            </p>                           
+                        </form>
+                        
+                    </div>
+                    <div id="question3" class="animate form">
+                        <form action="" autocomplete="on">
+                            <h1>Question 3</h1> 
+                            <p>What are the 2 terminals of a diode called?</p>
+                            
+                            <br class="radios">
+                             <input type="radio" name="option" value="Gate">Gate and Drain</br></br>
+                             <input type="radio" name="option" value="Pent">Pentode and Triode</br></br>
+                             <input type="radio" name="option" value="Anode">Anode and Cathode</br></br>
+                             <input type="radio" name="option" value="Drain">Drain and Source</br></br>              
+                             <p class="change_link">
+                                <a href="#toquestion1" class="to_register" onclick="back3()">BACK</a>								
+                                <a href="" class="to_register" onclick="submit3()" id="q3">SUBMIT</a>
+                                <a href="#toquestion3" class="to_register" >SKIP</a>	
+                                										
+                            </p>
+                           
+                        </form>
+                       
+                    </div>
+                    <div id="question4" class="animate form">
+                        <form action="" autocomplete="on">
+                            <h1>Question 4</h1> 
+                            <p>One of the main functions of personal protective grounds is to provide a _______ impedance path for a short circuit.</p>
+                            <br class="radios">
+                             <input type="radio" name="option" value="High" >High</br></br>
+                             <input type="radio" name="option" value="Low">Low</br></br>
+                             <input type="radio" name="option" value="Smooth">Smooth</br></br>
+                             <input type="radio" name="option" value="Adequate">Adequate</br></br>              
+                             <p class="change_link">
+                                <a href="#toquestion2" class="to_register">BACK</a>								
+                                <a  href="" class="to_register" onclick="submit4()" id="q4">SUBMIT</a>
+                                <a href="#toquestion4" class="to_register" >SKIP</a>	
+                                									
+                            </p>
+                        </form>
+                    </div>
+                    <div id="question5" class="animate form">
+                        <form action="" autocomplete="on">
+                            <h1>Question 5</h1> 
+                            <p>What is  full form of OSHA ?</p>
+                            <br class="radios">
+                             <input type="radio" name="option" value="a">Operational Safety and Hygiene Agency</br></br>
+                             <input type="radio" name="option" value="b">Occupational Health  and Sanitary Authority</br></br>
+                             <input type="radio" name="option" value="c">Occupational Health and Safety Administration</br></br>
+                             <input type="radio" name="option" value="d">None of above</br></br>              
+                             <p class="change_link">
+                                <a href="#toquestion3" class="to_register">BACK</a>								
+                                <a href="" class="to_register" onclick="submit5()" id="q5">SUBMIT</a>
+                                <a href="#toquestion5" class="to_register" >SKIP</a>	
+                                									
+                            </p>
+                        </form>
+                    </div>
+                    <div id="question6" class="animate form">
+                        <form action="" autocomplete="on">
+                            <h1>Question 6</h1> 
+                            <p>Which is the “Can’t Let Go” range of current flow?</p>
+                            <br class="radios">
+                             <input type="radio" name="option" value="3-9ma">3-9ma</br></br>
+                             <input type="radio" name="option" value="9-25ma">9-25ma</br></br>
+                             <input type="radio" name="option" value="25-60ma">25-60ma</br></br>
+                             <input type="radio" name="option" value="1-3ma">1-3ma</br></br>              
+                             <p class="change_link">
+                                <a href="#toquestion4" class="to_register">BACK</a>								
+                                <a href="" href="" class="to_register" onclick="submit6()" id="q6">SUBMIT</a>
+                                <a href="#toquestion6" class="to_register" >SKIP</a>	
+                                										
+                            </p>
+                        </form>
+                    </div>
+                    <div id="question7" class="animate form">
+                        <form action="" autocomplete="on">
+                            <h1>Question 7</h1> 
+                            <p>Which of the following type(s) of Personal Protective Equipment (PPE) is frequently used?</p>
+                            <br class="radios">
+                             <input type="radio" name="option" value="Glass">Safety Glasses</br></br>
+                             <input type="radio" name="option" value="Gloves">Gloves</br></br>
+                             <input type="radio" name="option" value="Face">Face Shield</br></br>
+                             <input type="radio" name="option" value="All">All of above</br></br>              
+                             <p class="change_link">
+                                <a href="#toquestion5" class="to_register">BACK</a>								
+                                <a href="" class="to_register" onclick="submit7()" id="q7">SUBMIT</a>
+                                <a href="#toquestion7" class="to_register" >SKIP</a>	
+                                									
+                            </p>
+                        </form>
+                    </div>
+                    <div id="question8" class="animate form">
+                        <form action="" autocomplete="on">
+                            <h1>Question 8</h1> 
+                            <p>If electric wires and appliances are overheated due to high voltage of electric current they can</p>
+                            <br class="radios">
+                             <input type="radio" name="option" value="Fire">Catch Fire</br></br>
+                             <input type="radio" name="option" value="Burn">Burn</br></br>
+                             <input type="radio" name="option" value="Freeze">Freeze</br></br>
+                             <input type="radio" name="option" value="Both">Both a and b</br></br>              
+                             <p class="change_link">
+                                <a href="#toquestion6" class="to_register">BACK</a>								
+                                <a href="" class="to_register" onclick="submit8()" id="q8">SUBMIT</a>
+                                <a href="#toquestion8" class="to_register" >SKIP</a>	
+                                									
+                            </p>
+                        </form>
+                    </div>
+                    <div id="question9" class="animate form">
+                        <form action="" autocomplete="on">
+                            <h1>Question 9</h1> 
+                            <p>A short thin piece of wire which is heated up and melt by the flowing of electric current in it, is called</p>
+                            <br class="radios">
+                             <input type="radio" name="option" value="Circuit">Circuit</br></br>
+                             <input type="radio" name="option" value="Fuse">Fuse</br></br>
+                             <input type="radio" name="option" value="Cell">Cell</br></br>
+                             <input type="radio" name="option" value="Resistor">Resistor</br></br>              
+                             <p class="change_link">
+                                <a href="#toquestion7" class="to_register">BACK</a>								
+                                <a href="" class="to_register" onclick="submit9()" id="q9">SUBMIT</a>
+                                <a href="#toquestion9" class="to_register" >SKIP</a>	
+                                									
+                            </p>
+                        </form>
+                    </div>
+                    <div id="question10" class="animate form">
+                        <form action="" autocomplete="on">
+                            <h1>Question 10</h1> 
+                            <p>The image to the right is of a:<img src="images\img1.png" height="30px" width="40px"></p>
+                            <br class="radios">
+                             <input type="radio" name="option" value="Diode">Diode</br></br>
+                             <input type="radio" name="option" value="Light">Light Emitting Diode</br></br>
+                             <input type="radio" name="option" value="Photo">Photosensitive Diode</br></br>
+                             <input type="radio" name="option" value="Variable">Variable Capacitance Diode</br></br>              
+                             <p class="change_link">
+                                <a href="#toquestion8" class="to_register">BACK</a>								
+                                <a href="" class="to_register" onclick="submit10()" id="q10">SUBMIT</a>
+                                <a href="#toquestion10" class="to_register" >SKIP</a>	
+                                										
+                            </p>
+                        </form>
+                    </div>
+                    <div id="question11" class="animate form">
+                        <form action="" autocomplete="off">
+                            <h1>Congratulations </h1> 
+                            <p>Your Assessment Grade is</p>
+                           <br>
+                            <input type="text" id="grade1" name="grade" placeholder="Click on show grade...">  
+                            <br><br><br><br><br><br>
+
+                             <p class="footer">								
+                                <a href="" class="to_register" onclick="submit11()" id="q11">SHOW GRADE</a>
+                                <a href="" class="to_register" onclick="win_close()">CANCEL</a>										
+                             </p>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+
+<script type="text/javascript">   
+
+ var attempt1= attempt2= attempt3=attempt4= attempt5= attempt6= attempt7=attempt8= attempt9= attempt10=5;
+ var total1=total2=total3=total4=total5=total6=total7=total8=total9=total10=0;
+ var total=0;
+
+ function submit1()
+ {  
+      attempt1=attempt1-1;
+      var ans=document.getElementsByName("option");
+        for(i=0;i<ans.length;i++)
+        { 
+            if(ans[i].checked==true)
+            {
+                x=ans[i].value;
+                if(x=="Capacitor")
+                {   
+                    total1=attempt1;
+                    document.getElementById("q1").href = "#toquestion1";
+                   
+                }
+            else
+                {
+                    document.getElementById("q1").href = "#";
+                    total1=attempt1;  
+                              
+                 } 
+                }
+            }  
+                    
+ }
+
+
+
+
+ function submit2()
+ {  
+    attempt2=attempt2-1;
+    var ans=document.getElementsByName("option");
+    for(i=0;i<ans.length;i++)
+    { 
+        if(ans[i].checked==true)
+        {
+            x=ans[i].value;
+            if(x=="6")
+            {       
+                total2=attempt2;
+                document.getElementById("q2").href = "#toquestion2";
+                
+            }
+        
+        
+            else{
+               
+                document.getElementById("q2").href = "#toquestion1";
+                total2=attempt2;
+                
+            }
+        }
+        
+    }
+    
+ }
+
+
+
+function submit3()
+{    
+   
+    attempt3=attempt3-1;
+    var ans=document.getElementsByName("option");
+    for(i=0;i<ans.length;i++)
+    { 
+        if(ans[i].checked==true)
+        {
+            x=ans[i].value;
+            if(x=="Anode")
+            {
+                
+                total3=attempt3;
+                document.getElementById("q3").href = "#toquestion3";
+               
+            }
+        
+            else{
+                
+                document.getElementById("q3").href = "#toquestion2";
+                total3=attempt3;
+                
+            }
+        }
+    }
+   
+ }
+
+  
+
+ function submit4()
+ {       
+    attempt4=attempt4-1; 
+    var ans=document.getElementsByName("option");
+    for(i=0;i<ans.length;i++)
+    { 
+        if(ans[i].checked==true)
+        {
+            x=ans[i].value;
+            if(x=="Low")
+            {
+               
+                total4=attempt4;
+                document.getElementById("q4").href = "#toquestion4";
+            }
+        
+            else{
+                
+                document.getElementById("q4").href = "#toquestion3";
+                total4=attempt4;
+            }
+        }
+    }
+    
+ }
+ 
+   
+ function submit5()
+ {   
+    attempt5=attempt5-1;
+    var ans=document.getElementsByName("option");
+    for(i=0;i<ans.length;i++)
+    { 
+        if(ans[i].checked==true)
+        {
+            x=ans[i].value;
+            if(x=="c")
+            {
+               
+                total5=attempt5;
+                document.getElementById("q5").href = "#toquestion5";
+            }
+        
+            else{
+                
+                document.getElementById("q5").href = "#toquestion4";
+                total5=attempt5;
+            }
+        }
+    }
+    
+ }
+
+    
+
+ function submit6()
+ {     
+    attempt6=attempt6-1;  
+    var ans=document.getElementsByName("option");
+    for(i=0;i<ans.length;i++)
+    { 
+        if(ans[i].checked==true)
+        {
+            x=ans[i].value;
+            if(x=="9-25ma")
+            {
+                
+                total6=attempt6;
+                document.getElementById("q6").href = "#toquestion6";
+            }
+        
+            else{
+               
+                document.getElementById("q6").href = "#toquestion5";
+                total6=attempt6;
+            }
+        }
+    }
+    
+ }
+
+   
+ function submit7()
+ {     
+    attempt7=attempt7-1;
+    var ans=document.getElementsByName("option");
+    for(i=0;i<ans.length;i++)
+    { 
+        if(ans[i].checked==true)
+        {
+            x=ans[i].value;
+            if(x=="All")
+            {
+                
+                total7=attempt7;
+                document.getElementById("q7").href = "#toquestion7";
+            }
+        
+            else{
+                
+                document.getElementById("q7").href = "#toquestion6";
+                total7=attempt7;
+            }
+        }
+    }
+    
+ }
+ 
+    
+ function submit8()
+ {     
+    attempt8=attempt8-1;
+    var ans=document.getElementsByName("option");
+    for(i=0;i<ans.length;i++)
+    { 
+        if(ans[i].checked==true)
+        {
+            x=ans[i].value;
+            if(x=="Burn")
+            {
+               
+                total8=attempt8;
+                document.getElementById("q8").href = "#toquestion8";
+            }
+        
+            else{
+                
+                document.getElementById("q8").href = "#toquestion7";
+                total8=attempt8;
+            }
+        }
+    }
+    
+ }
+
+   
+ function submit9()
+ {     
+    attempt9=attempt9-1;
+    var ans=document.getElementsByName("option");
+    for(i=0;i<ans.length;i++)
+    { 
+        if(ans[i].checked==true)
+        {
+            x=ans[i].value;
+            if(x=="Fuse")
+            {
+                
+                total9=attempt9;
+                document.getElementById("q9").href = "#toquestion9";
+            }
+        
+            else{
+               
+                document.getElementById("q9").href = "#toquestion8";
+                total9=attempt9;
+            }
+        }
+    }
+    
+ }
+ 
+    
+ function submit10()
+ {     
+    attempt10=attempt10-1;
+    var ans=document.getElementsByName("option");
+    for(i=0;i<ans.length;i++)
+    { 
+        if(ans[i].checked==true)
+        {
+            x=ans[i].value;
+            if(x=="Variable")
+            {
+                
+                total10=attempt10;
+                document.getElementById("q10").href = "#toquestion10";
+            }
+        
+            else{
+                
+                document.getElementById("q10").href = "#toquestion9";
+                total10=attempt10;
+            }
+        }
+    }
+    
+ }
+
+   
+ function submit11()
+ {  
+    document.getElementById("question1").style.opacity="";
+    total=total1+total2+total3+total4+total5+total6+total7+total8+total9+total10;
+    //alert("Your total marks="+total);
+   
+    document.getElementById("q11").href = "#toquestion10";
+   document.getElementById("grade1").value = grade();
+    //alert("Your grade is" + grade);
+     function grade(){
+        if(total==40)
+        {
+           return "Exception";
+        }
+        else if(total>=30 && total<=39)
+        {
+            return "Grade A";
+        }
+        else if(total>=20 && total<=29)
+        {
+            return "Grade B";
+        }
+        else if(total>=10 && total<=19)
+        {
+            return "Grade C";
+        }
+        else
+        {
+            return "Grade D"
+        }
+    };
+ }
+ function win_close()
+    {
+        close();
+    }
+</script>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>Login and Registration Form with HTML5 and CSS3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="/static/css/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/css/style3.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/css/animate-custom.css" />
+      <style>
+        .row{
+            margin: 1% 0%; 
+            width: 100%;
+            display: inline-flex;
+            }
+        .col-25 {
+            width: 34%;
+            margin-top: 6px;
+         }
+        .col-75 {
+        width: 66%;
+        margin-top: 6px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+               
+            <header>
+                <h1>School ATL Incharge </h1>
+                <span>Welcome username</span>
+                <nav class="codrops-demos">
+                    
+                    <a href=<a href="{% url 'file:school_details_atl_incharge' %}" ><br>School Details for ATL Incharge</a>
+                    <a href="{% url 'file:schoolatlinchargeweb' %}" ><br>School ATL Incharge Information</a>
+                    <a href="{% url 'file:AESWeb' %}" class="current-demo"><br>ATL Establishment Status</a>
+                    <a href="{% url 'file:TNFA'%}"><br>Teacher Nomination Details</a>
+                </nav>
+            </header>
+            <section>				
+                <div id="container_demo" >
+                    
+                    
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  autocomplete="on" method="POST"> 
+                                {% csrf_token %}
+                                <h1>ATL Establishment Status</h1> 
+
+                                <div class="row">
+                                     <div class="col-25">
+                                        <label for="applied" class="applied" >1. Has applied for ATL Lab</label><br>
+                                    </div>
+									
+                                    <div class="col-75">
+                                        &nbsp;&nbsp;&nbsp;<input id="option1" name="option1" value="yes" type="radio" />Yes
+                                        &nbsp;&nbsp;&nbsp;<input id="option1" name="option1" value="no" type="radio" />No                                  
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="whichdate" class="whichdate" >&nbsp;&nbsp;&nbsp; Which Date </label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="date1" name="date1" required="required" type="datetime" placeholder="Date" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    
+                                        <label for="registered" class="registered" > <b>2. Who Registered?</b></label><br><br>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="name" class="name" >&nbsp;&nbsp;&nbsp;Name</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="name" name="name" required="required" type="text" placeholder="Name" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="number" class="number" >&nbsp;&nbsp;&nbsp;Contact Number</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="number" name="number" required="required" type="text" placeholder="Number" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="email" class="email" >&nbsp;&nbsp;&nbsp;Email ID</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="email" name="email" required="required" type="text" placeholder="Email" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="qualified" class="qualified" >3. Has ATL got selected or qualified</label><br>
+                                    </div>
+                                    <div class="col-75">
+                                       &nbsp;&nbsp;&nbsp; <input id="option2" name="option2" value="yes" type="radio" />Yes
+                                       &nbsp;&nbsp;&nbsp; <input id="option2" name="option2" value="no" type="radio" />No                                 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="whichdate1" class="whichdate1" >&nbsp;&nbsp;&nbsp; Which Date </label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="date2" name="date2" required="required" type="datetime" placeholder="Date" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                     <div class="col-25">
+                                        <label for="fund" class="fund" >4. Has ATL Fund Received</label><br>
+                                    </div>
+									
+                                    <div class="col-75">
+                                        &nbsp;&nbsp;&nbsp;<input id="option3" name="option3" value="yes" type="radio" />Yes
+                                        &nbsp;&nbsp;&nbsp;<input id="option3" name="option3" value="no" type="radio" />No                                 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="whichdate2" class="whichdate2" >&nbsp;&nbsp;&nbsp; Which Date </label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="date3" name="date3" required="required" type="datetime" placeholder="Date" /> 
+                                    </div>
+                                </div>
+                                <footer >                  
+                                    <p class="login button"><input type="submit" value="Save" name="submit" class="login"/> </p>
+                                    <p class="login button"><a href="{% url 'file:schoolatlinchargeweb' %}"><input type="button" value="Previous"  /></a> </p>
+                                    <p class="login button"><a href="{% url 'file:TNFA'%}"><input type="button" value="Next"  /></p></a> 
+                                    <p class="login button"><a href="{% url 'file:schoolreg'%}"><input type="button" value="Cancel"  /></a> </p>
+                            </footer>
+                            </form>
+                        </div>         
+                    </div>
+                </div>  
+            </section>       
+        </div>
+    </body>
+</html>

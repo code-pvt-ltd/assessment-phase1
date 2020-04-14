@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>AI Assessment Tool</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        
+        <link rel="stylesheet" type="text/css" href="/static/css/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/css/animate-custom.css" />
+        <style>
+            .row{
+                margin: 1% 0%; 
+                width: 100%;
+                display: inline-flex;
+				align-items: center;
+                }
+            .col-25 {
+                width: 34%;
+                margin-top: 6px;
+             }
+            .col-75 {
+            width: 66%;
+            margin-top: 6px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+           
+            <header>
+                <h1>School ATL Incharge </h1>
+
+                <br><h1 style="text-align:left;"><a href="{% url 'file:userlogin'%}">HOME</a></h1>
+
+
+                <span>Welcome {{ request.session.username }}</span>
+
+				<nav class="codrops-demos">
+					
+					<a href="{% url 'file:school_details_atl_incharge' %}" class="current-demo"><br>School Details for ATL Incharge</a>
+					<a href="{% url 'file:schoolatlinchargeweb' %}"><br>School ATL Incharge Information</a>
+                    <a href="{% url 'file:AESWeb' %}"><br>ATL Establishment Status</a>
+                    <a href="{% url 'file:TNFA'%}"><br>Teacher Nomination Details</a>
+				</nav>
+            </header>
+            <section>				
+                <div id="container_demo" >
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  autocomplete="on"  method="POST" onsubmit="return save()">
+                                {% csrf_token %}
+                                <h1>School Details</h1> 
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="schoolname" class="uname" >1. School Name </label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="schname" name="school_name" required="required" type="text" placeholder="School Name"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="schid" class="youpasswd" >2. School Registration ID </label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="schregID" name="school_reg_id" required="required" type="text" placeholder="School Registration ID" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    
+                                        <label for="address" class="address" > <b>3. Address Details</b></label><br><br>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="country" class="country" > &nbsp;&nbsp;&nbsp; Country Name </label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="country" name="country" required="required" type="text" placeholder="Country" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="state" class="state" > &nbsp;&nbsp;&nbsp;State    </label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="state" name="state" required="required" type="text" placeholder="State" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="city" class="city" >&nbsp;&nbsp;&nbsp;City/<br>&nbsp;&nbsp;&nbsp;District</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="city" name="district" required="required" type="text" placeholder="City/District" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="pincode" class="pincode" >&nbsp;&nbsp;&nbsp;Pin Code</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="pincode" name="pincode" required="required" type="text" placeholder="Pin Code" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="phone" class="phone" >4. Phone Number</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="phone" name="phone" required="required" type="text" placeholder="Phone Number" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="email" class="email" >5. Email ID</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="email" name="Email" required="required" type="text" placeholder="Email ID" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="affiliation" class="affiliation" >6.Affiliation Body</label><br>
+                                    </div>
+                                    <div class="col-75">
+                                        <input id="cbse" name="affilation_body" type="radio" value="CBSE" />CBSE
+                                    
+                                        <input id="icse" name="affilation_body" type="radio" value="ICSE" />ICSE
+                                    
+                                        <input id="state_board" name="affilation_body" type="radio" value="State Board"/>State Board
+                                    
+                                        <input id="other" name="affilation_body" type="radio" />Other Board
+                                        <div class="col-75">
+                                            <input type="text" class="board" id="board" placeholder="Other board"/>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                                <footer >
+                                    <p class="login button"><input type="submit" value="Save" name="submit" class="login" onsubmit="save()"/> </p>
+                                    <p class="login button"><a href="{% url 'file:schoolatlinchargeweb' %}"><input type="button" value="Next"  /></a> </p>
+                                   <p class="login button"><a href="{% url 'file:schoolreg'%}"><input type="button" value="Cancel"  /></a> </p>
+                            </footer>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>  
+            </section>       
+        </div>
+        <script>
+            function save(){
+                //alert("Data saved successfully")
+            }
+        </script>
+    </body>
+</html>

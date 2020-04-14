@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>AI Assessment Tool</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        
+        <link rel="stylesheet" type="text/css" href="css/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/css/style2.css" />
+        <link rel="stylesheet" type="text/css" href="css/css/animate-custom.css" />
+        <style>
+            .row{
+                margin: 3px 11px; 
+                width: 336px;
+                display: inline-flex;
+                }
+            .col-25 {
+                width: 34%;
+                margin-top: 6px;
+             }
+            .col-75 {
+            width: 66%;
+            margin-top: 6px;
+
+            }
+            select{
+                width: 160px;
+            }
+            td{
+                width: 100px;
+            }
+            span{
+                float: left;
+                margin-left: 10px;
+                display: inline-flex;
+            }
+            table{
+                width: 100%;
+            }
+            #wrapper h1{
+               font-size: 40px;
+            }
+            header h1{
+                text-align: center;
+            }
+            #wrapper footer{
+                text-align: center;
+            }
+            p.login.button, p.signin.button {
+            
+            width: 145px;
+            }
+        </style>
+    </head>
+        <body>
+       
+            <div class="container">
+               
+                <header>
+                    <h1>Assessment Dashboard </h1><br><br>
+                    <span >Please Select Report Type :-   
+                    <select>
+                        <option>Assessment Report</option>
+                        <option>Niti Aayog Report</option>
+                        <option>Grade Report</option>
+                    </select>
+                </span>
+                   
+                </header>
+                <section>				
+                    <div id="container_demo" > 
+                        <div id="wrapper">
+                            <br><br><h1>Report</h1>
+                            <div id="dashboard" class="animate form">
+                                <form  method="POST"> 
+                                    
+                                    <div class="row">
+                                        <div class="col-25">
+                                            <label for="country" class="country" >Country</label>
+                                        </div>
+                                        <div class="col-75">
+                                            <select id="country" name="country" size="1" onchange="set_country(this,country)" required="required" >
+                                            <option> --SELECT-- </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-25">
+                                            <label for="district" class="district"  disabled="disabled"> District </label>
+                                        </div>
+                                        <div class="col-75">
+                                            <select id="district" name="district" > 
+                                            <option> Uttar Pradesh </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="row">
+                                        <div class="col-25">
+                                            <label for="city" class="city"  disabled="disabled" > City </label>
+                                        </div>
+                                        <div class="col-75">
+                                            <select id="city" name="city" >
+                                                <option>
+                                                    Bareiliy
+                                                </option>
+                                            </select> 
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-25">
+                                            <label for="schoolname" class="schoolname" > School Name </label>
+                                        </div>
+                                        <div class="col-75">
+                                            <select id="schname" name="schname" >
+                                                <option>
+                                                    S. N. College
+                                                </option>
+                                            </select> 
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-25">
+                                            <label for="category" class="category" > Assessment Category </label>
+                                        </div>
+                                        <div class="col-75">
+                                            <select id="category" name="category" >
+                                                <option>
+                                                    Student
+                                                </option>
+                                            </select> 
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-25">
+                                            <label for="quarter" class="quarter" > Quarter </label>
+                                        </div>
+                                        <div class="col-75">
+                                            <select id="quarter" name="quarter" >
+                                                <option>
+                                                    Q1
+                                                </option>
+                                            </select> 
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-25">
+                                            <label for="grade" class="grade" > Grade </label>
+                                        </div>
+                                        <div class="col-75">
+                                            <select id="grade" name="grade" >
+                                                <option>
+                                                    A
+                                                </option>
+                                            </select> 
+                                        </div>
+                                    </div>
+                                   <br><br>
+                                   <br><br>
+                                    <footer >                  
+                                        <p class="login button"><input type="button" value="Show Records" name="show" onclick="show_record();" /> </p>
+                                   </footer>
+                                   
+                                </form>
+                            </div>         
+                        </div>
+                    </div> 
+                    <div class="tbl" id="tbl" style="display: none;">
+                        <table >
+                            <tr style="background: #5f9ea052;">
+                                <td>School<br>Name</td>
+                                <td>City</td>
+                                <td>Student<br>Name</td>
+                                <td>Student Roll<br>Number</td>
+                                <td>Class/<br>Section</td>
+                                <td>Grade</td>
+                                <td>Date of<br>appearance</td>   
+                            </tr>
+                            <tr style="background:#5f9ea0c4; color: black;">
+                                <td>S N College</td>
+                                <td>Bareiliy</td>
+                                <td>XYZ</td>
+                                <td>123</td>
+                                <td>X A</td>
+                                <td>A</td>
+                                <td>21/03/20</td>
+                            </tr>
+                            <tr style="background:#5f9ea0c4; color: black;">
+                                <td>...</td>
+                                <td>...</td>
+                                <td>...</td>
+                                <td>...</td>
+                                <td>...</td>
+                                <td>...</td>
+                                <td>...</td>
+                            </tr>
+                            <tr style="background:#5f9ea0c4; color: black;">
+                                <td>...</td>
+                                <td>...</td>
+                                <td>...</td>
+                                <td>...</td>
+                                <td>...</td>
+                                <td>...</td>
+                                <td>...</td>
+                            </tr>
+                        </table> 
+                    </div>
+                   
+                </section>       
+            </div>
+            <script>
+                function show_record()
+                {
+                    document.getElementById("tbl").style.display ='block';
+                }
+            </script>
+        </body>
+        
+</html>

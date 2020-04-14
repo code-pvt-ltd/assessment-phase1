@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AI Assessment Tool</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+<style>
+  .btn-get-started1{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: block;
+    padding: 15px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    color: #fff;
+    background: #f55b2d;
+  }
+  .btn-get-started1:hover{
+    color:#18d26e ;
+    background-color: white;
+  }
+  .modal-content {
+    transition: 0.5s;
+  margin: 2% auto 5% auto; /* 5% from the top, 15% from the bottom and centered */
+  border:solid;
+  border-color: #009688;
+  max-width:465px ;
+  color: #000000;;
+  background-color: #c5ced0;
+  width: 92%; /* Could be more or less, depending on screen size */
+}
+.modal { 
+  min-width: 320px;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  transition: 0.5s;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.row1{
+    margin: 1% 3%;
+    display:inline-flex;
+}
+.col-40{
+   width: 35%;
+}
+.col-60{
+width: 69%;
+margin-left: 2px;
+}
+#id02{
+    display: none;
+}
+.modal-footer01{
+    margin: 10px;
+    text-align: center;
+}
+input[type=radio]{
+    margin: 5px;
+}
+</style>
+</head>
+
+
+<body>
+     <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="#intro" class="scrollto">School CBSE Incharge</a></h1>
+        
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+        </div>
+    </div>
+  </header><!-- #header -->
+ <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <!--<ol class="carousel-indicators"></ol>-->
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active">
+            <div class="carousel-background"><img src="img/intro-carousel/2.jpg" alt=""></div>
+            <div class="carousel-container"> 
+              <div class="carousel-content">            
+               <a class="btn-get-started1 scrollto" href="#featured-services" onclick="show()">School <br>Details</a></button> 
+               <a class="btn-get-started1 scrollto" href="#featured-services" onclick="show1()">School CBSE <br>Incharge</a></button>
+                <a href="#featured-services" class="btn-get-started1 scrollto" onclick="show2()">CBSE Establishment<br>Status</a>
+			    <a href="#featured-services" class="btn-get-started1 scrollto" onclick="show3()">Teacher Nominated<br>for CBSE</a>           
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section><!-- #intro -->
+
+
+ <div id="id01" class="modal">
+  <form class="modal-content animate"  method="post">
+   <u> <h1>School Details</h1></u>
+    <div class="row1">
+        <div class="col-40">
+            <label for="name">Name of the School <span style="color:red">*</span></label>
+        </div> 
+        <div class="col-60">
+           <input type="text" id="name" placeholder="Name of the School">
+        </div>
+    </div><br>
+    <div class="row1">
+            <div class="col-40">
+              <label for="school_id">Registration School Id <span style="color:red">*</span></label>
+            </div>
+            <div class="col-60">
+                <input type="text" id="reg_id" placeholder="Registration School Id">
+            </div>
+    </div><br>
+    <div class="row1">
+        <label for="address"><b>Address <span style="color:red">*</span></b></label>
+    </div>
+    <div class="row1">
+        <div class="col-40">
+            Country
+        </div>
+        <div class="col-60">
+            <input type="text" id="country" placeholder="Country">
+        </div>
+    </div><br>
+    <div class="row1">
+        <div class="col-40">
+            State
+        </div>
+        <div class="col-60">
+            <input type="text" id="state" placeholder="State">
+        </div>
+    </div><br>
+    <div class="row1">
+        <div class="col-40">
+            District
+        </div>
+        <div class="col-60">
+            <input type="text" id="district" placeholder="District">
+        </div>
+    </div><br>
+    <div class="row1">
+        <div class="col-40">
+           Pincode
+        </div>
+        <div class="col-60">
+            <input type="text" id="pincode" placeholder="Pincode">
+        </div>
+    </div><br>
+    <div class="row1">
+        <label for="affiliation body"><b>Affiliation Body <span style="color:red">*</span></b></label>
+    </div>
+    <div class="row1">
+        <input type="radio" name="aff_body" value="atl" style="display: inline;"> ATL
+        <input type="radio" name="aff_body" value="state"> State Board
+        <input type="radio" name="aff_body" value="icse"> ICSE
+    </div><br>
+    <div class="modal-footer01">
+        <input type="submit" id="submit" value="Submit">
+        <input type="button" id="cancel" value="Cancel" onclick="cancel1()">
+    </div>
+  </form>
+</div>
+
+
+<div id="id02" class="modal" >
+    <form  class="modal-content animate"  method="post">
+        <u><h1>School CBSE Incharge</h1></u>
+        <div class="row1">
+            <div class="col-40">
+                <label for="name">Person name <span style="color:red">*</span></label>
+            </div> 
+            <div class="col-60">
+               <input type="text" id="person name" placeholder="Person Name">
+            </div>
+        </div><br>
+        <div class="row1">
+            <div class="col-40">
+                <label for="name">Person unique Id <span style="color:red">*</span></label>
+            </div> 
+            <div class="col-60"> 
+                <input type="text" id="uniqueId" placeholder="Person Unique Id">
+            </div>
+        </div><br>
+        <div class="row1">
+            <label for="ContactDetails"><b>Person Contact Details <span style="color:red">*</span></b> </label>
+        </div>
+        <div class="row1">
+            <div class="col-40">
+                <label for="name">Number</label>
+            </div> 
+            <div class="col-60">
+                <input type="text" id="number" placeholder="Number">
+            </div>
+        </div><br>
+        <div class="row1">
+            <div class="col-40">
+                <label for="name">Email Id</label>
+            </div> 
+            <div class="col-60">
+                <input type="text" id="emial id" placeholder="Email Id">
+            </div>
+        </div><br>
+        <div class="modal-footer01">
+            <input type="submit" id="submit" value="Submit">
+            <input type="button" id="cancel" value="Cancel">
+        </div>
+    </form>
+
+</div>
+<div id="id03" class="modal">
+    <form class="modal-content animate"  method="post">
+        <center><u><h4>CBSE Establishment Status</h4></u></center>
+        <div class="row1">
+            <div class="col-40">
+                <label for="Date">Date <span style="color:red">*</span></label>
+            </div>
+            <div class="col-60">
+                <input type="text" id="date" placeholder="Date"> 
+            </div>
+        </div><br>
+        <div class="row1">
+                <label for="who registered"><b>Who Registered <span style="color:red">*</span></b></label>
+        </div>
+        <div class="row1">
+                <div class="col-40">
+                   Name 
+                </div>
+                <div class="col-60">
+                    <input type="text" id="name" placeholder="Name">
+                </div>
+        </div><br>
+        <div class="row1">
+                <div class="col-40">
+                    Contact Number 
+                </div>
+                <div class="col-60">
+                    <input type="text" id="contact1" placeholder="Contact Details">
+                </div>
+        </div><br>
+        <div class="row1">
+                <label for="atl qualified"><b>Has ATL got Selected or Qualified <span style="color:red">*</span></b></label>
+        </div>
+        <div class="row1">
+                <div class="col-40">
+                    Date
+                </div>
+                <div class="col-60">
+                    <input type="text" id="date" placeholder="Date">
+                </div>
+        </div><br>
+        <div class="row1">
+                <label for="atl fund recieved"><b>ATL Fund Recieved <span style="color:red">*</span></b></label>
+        </div>
+        <div class="row1">
+                <div class="col-40">
+                    Date
+                </div>
+                <div class="col-60">
+                    <input type="text" id="date" placeholder="Date">
+                </div>
+        </div> <br>
+        <div class="modal-footer01">
+            <input type="button" id="submit" value="Submit">
+            <input type="button" id="cancel" value="Cancel">
+        </div>      
+    </form>
+</div>
+<div id="id04" class="modal">
+    <form  class="modal-content animate"  method="post">
+        <center><u><h4>Teacher Nominated for CBSE</h4></u></center>
+        <div class="row1">
+            <div class="col-40">
+                <label for="Name">Name <span style="color:red">*</span></label>
+            </div>
+            <div class="col-60">
+                <input type="text" id="name" placeholder="Name">
+            </div>
+        </div><br>
+        <div class="row1">
+            <div>
+                <label for="Contact Details"><b>Conatct Details <span style="color:red">*</span></b></label>
+            </div>
+        </div>
+        <div class="row1">
+            <div class="col-40">
+                Email Id
+            </div>
+            <div class="col-60">
+                <input type="text" id="email" placeholder="Email Id">
+            </div>
+        </div><br>
+        <div class="row1">
+            <div class="col-40">
+                Phone Number
+            </div>
+            <div class="col-60">
+                <input type="text" id="phone" placeholder="Phone Number">
+            </div>
+        </div><br>
+        <div class="modal-footer01">
+            <input type="button" id="submit" value="Submit">
+            <input type="button" id="cancel" value="Cancel">
+        </div>
+    </form> 
+</div>
+<!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>ATL Lab</h3>
+            <p>ALT, which stands for alanine transaminase, is an enzyme found mostly in the liver. An ALT test measures the amount of ALT in the blood. High levels of ALT in the blood can indicate a liver problem, even before you have signs of liver disease,
+               such as jaundice, a condition that causes your skin and eyes to turn yellow.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              303 MoolChand Tower Khasra No 587<br>
+              Shiv mandir, Sector 22<br>
+              Noida, Uttar Pradesh 201301<br>
+              Phone: +91 098702 43305<br>
+              Email: humanresource@codeglobal.in <br>
+              <strong>Phone:</strong> +91 9098042511<br>
+              <strong>Email:</strong> humanresource@codeglobal.in<br>
+            </p>
+          </div>
+            <div class="col-lg-3 col-md-6 footer-info">
+              <h4>Social Links</h4>
+              <div class="social-links">
+                <a href="http://www.twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="http://www.facebook.com" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="http://www.instagram.com" class="instagram"><i class="fa fa-instagram"></i></a>
+                <a href="http://www.googl-plus.com" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                <a href="http://www.linkedin.com" class="linkedin"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+  
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>CODE</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage-->
+        
+        Developed & Designed by <a href="#">CODE</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+var modal1=document.getElementById('id02');
+var modal2=document.getElementById('id03');
+var modal3=document.getElementById('id04');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        document.getElementById('header').style.display ='block';
+    }
+    else if (event.target == modal1) {
+        modal1.style.display = "none";
+        document.getElementById('header').style.display ='block';
+    }
+    else if (event.target == modal2) {
+        modal2.style.display = "none";
+        document.getElementById('header').style.display ='block';
+    }
+    else if(event.target==modal3){
+        modal3.style.display = "none";
+        document.getElementById('header').style.display ='block';
+    }
+}
+function show()
+{
+    document.getElementById('id01').style.display='block';
+    document.getElementById('header').style.display ='none';
+}
+function show1()
+{
+    document.getElementById('id02').style.display='block';
+    document.getElementById('header').style.display ='none';
+}
+function show2()
+{
+    document.getElementById('id03').style.display='block';
+    document.getElementById('header').style.display ='none';
+}
+function show3()
+{
+    document.getElementById('id04').style.display='block';
+    document.getElementById('header').style.display ='none';
+}
+function cancel1(){
+    this.window.close();
+}
+</script>
+ <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

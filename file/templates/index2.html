@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>Login and Registration Form with HTML5 and CSS3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        
+        <link rel="stylesheet" type="text/css" href="/static/css/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/css/style2.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/css/animate-custom.css" />
+        <style>
+            .row{
+                margin: 1% 0%; 
+                width: 100%;
+                display: inline-flex;
+                }
+            .col-25 {
+                width: 34%;
+                margin-top: 6px;
+             }
+            .col-75 {
+            width: 66%;
+            margin-top: 6px;
+
+            }
+        </style>
+    </head>
+        <body>
+       
+            <div class="container">
+               
+                <header>
+                    <h1>School ATL Incharge </h1>
+                    <span>Welcome username</span>
+                    <nav class="codrops-demos">
+                        
+                        <a href="{% url 'file:school_details_atl_incharge' %}" ><br>School Details for ATL Incharge</a>
+                        <a href="{% url 'file:schoolatlinchargeweb' %}" class="current-demo"><br>School ATL Incharge Information</a>
+                        <a href="{% url 'file:AESWeb' %}" ><br>ATL Establishment Status</a>
+                        <a href="{% url 'file:TNFA'%}"><br>Teacher Nomination Details</a>
+                    </nav>
+                </header>
+                <section>				
+                    <div id="container_demo" >
+                        
+                        
+                        <div id="wrapper">
+                            <div id="login" class="animate form">
+                                <form  autocomplete="on" action="" method="POST" onsubmit="return save()"> 
+                                    {% csrf_token %}
+                                    <h1>School ATL Incharge Information</h1> 
+                                    <div class="row">
+                                        <div class="col-25">
+                                            <label for="personname" class="pname" >1. Person Name </label>
+                                        </div>
+                                        <div class="col-75">
+                                            <input id="personname" name="personname" required="required" type="text" placeholder="Person Name"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-25">
+                                            <label for="personid" class="personid" >2. Person Unique ID </label>
+                                        </div>
+                                        <div class="col-75">
+                                            <input id="personID" name="personID" required="required" type="text" placeholder="Person Unique ID" /> 
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        
+                                            <label for="contact" class="contact" > <b>3.Contact Details</b></label><br><br>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-25">
+                                            <label for="mobile" class="mobile" > &nbsp;&nbsp;&nbsp;Mobile Number </label>
+                                        </div>
+                                        <div class="col-75">
+                                            <input id="mobile" name="mobile" required="required" type="text" placeholder="Mobile Number" /> 
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-25">
+                                            <label for="email" class="email" >&nbsp;&nbsp;&nbsp; Email ID    </label>
+                                        </div>
+                                        <div class="col-75">
+                                            <input id="email" name="email" required="required" type="text" placeholder="Email ID" /> 
+                                        </div>
+                                    </div>
+                                   
+                                    <footer >                  
+                                        <p class="login button"><input type="submit" value="Save" name="submit" class="login" onsubmit="save()"/> </p>
+                                        <p class="login button"><a href="{% url 'file:school_details_atl_incharge'%}"><input type="button" value="Previous"  /></a> </p>
+                                        <p class="login button"><a href="{% url 'file:AESWeb'%}"><input type="button" value="Next"  /></p></a> 
+                                        <p class="login button"><a href="{% url 'file:schoolreg'%}"><input type="button" value="Cancel"  /></a> </p>
+                                </footer>
+                                </form>
+                            </div>         
+                        </div>
+                    </div>  
+                </section>       
+            </div>
+            <script>
+                function save(){
+                    alert("Data saved successfully")
+                }
+            </script>
+        </body>
+</html>
