@@ -178,7 +178,7 @@ input[type=submit]{
                 <a onclick="cbse()" href="#featured-services" class="btn-get-started1 scrollto">CBSE</a><br/>
 
                 <div id="id01" class="modal1">
-                  <form class="modal-content1 animate" method="POST" action="/schoolreg/">
+                  <form class="modal-content1 animate" method="POST" <!--action="{% url 'file:userlogin' %}"-->>
 					{% csrf_token %}
                     <div class="imgcontainer">
                       <span> ATL Login Form</span>
@@ -189,7 +189,7 @@ input[type=submit]{
                             <label for="name"><b>Email or number</b></label>
                         </div>
                         <div class="col-60">
-                      <input type="text" placeholder="Enter Email or number" name="Mobilenumber" required>
+                python manage.py          <input type="text" placeholder="Enter Email or number" name="Mobilenumber" required>
                         </div>
                     </div><br>
                     <div class="row1">
@@ -343,7 +343,7 @@ function close01()
 function nextSP()
 {
 	alert("helloworld")
-  location.href="/schoolreg/";
+  /*location.href="/schoolreg/";*/
 }
 function next1()
 {
