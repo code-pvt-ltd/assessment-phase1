@@ -7,8 +7,8 @@ urlpatterns = [
 
 
     path("", views.indexpage, name="indexpage"),
-   # path('student_login/', views.student_login, name="student_login"),
-    path("userlogin/",views.userlogin,name="userlogin"),
+    path("choose_school", views.choose_school, name="choose_school"),   # path('student_login/', views.student_login, name="student_login"),
+    path("atllogin/",views.atllogin,name="atllogin"),
     path("schoolreg/", views.schoolreg, name="schoolreg"),
     path('Package1/', views.Package1, name='Package1'),
     path('Package2/', views.Package2, name='Package2'),

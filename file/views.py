@@ -10,7 +10,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from file.models import PackageOne, Packaget, Packageth, Packagef, schoolatlincharges, teachernominatedforatl, aes, \
-    student_login_detail, AI_Questions, table, venreg1, moc
+    student_login_detail, AI_Questions, table, venreg1, moc, Atl_login_detail
 
 
 # labregistration page
@@ -114,12 +114,43 @@ def userlogin(request):
             return HttpResponse("No Value Found")
     return render(request, "index1.html")
 
+def atllogin(request):
+
+    if request.method == "GET":
+        ValMobilenumber = request.GET.get("Mobilenumber")
+        # studentid = request.POST.get("studentid")
+        # username = request.POST.get("username")
+        Valpassword = request.GET.get("password")
+        try:
+
+            if Atl_login_detail.objects.filter(Mobilenumber=ValMobilenumber).exists():
+                
+                db = Atl_login_detail.objects.get(Mobilenumber=ValMobilenumber)
+                if db.Mobilenumber == ValMobilenumber:
+                    if db.Mobilenumber == ValMobilenumber and db.password == Valpassword:
+                        print("Success")
+                        return HttpResponse("Success")
+                    return HttpResponse("Invalid Credentials")
+            elif Atl_login_detail.objects.filter(email=ValMobilenumber).exists():
+                print("Yes Email")
+                db = Atl_login_detail.objects.get(email=ValMobilenumber)
+                if db.email == ValMobilenumber and db.password == Valpassword:
+                    print("Success")
+                    return HttpResponse("Success")
+                return HttpResponse("Invalid Credentials")
+        except Exception as e:
+            print(e)
+            return HttpResponse("No Value Found")
+
 def indexpage(request):
     return render(request, "index.html" )
 
 '''def userlogin(request):
     print("in the userlogin")
     return render(request, "userlogin.html" )'''
+
+def choose_school(request):
+    return render(request,"chooseschoolreg.html")
 
 def schoolreg(request):
     print("in the schoolreg")

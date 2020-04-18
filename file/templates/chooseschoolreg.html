@@ -20,7 +20,7 @@
   <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="/static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <!-- Main Stylesheet File -->
   <link href="/static/css/style.css" rel="stylesheet">
 <style>
@@ -178,8 +178,7 @@ input[type=submit]{
                 <a onclick="cbse()" href="#featured-services" class="btn-get-started1 scrollto">CBSE</a><br/>  
 
                 <div id="id01" class="modal1"> 
-                  <form class="modal-content1 animate" method="POST">
-					{% csrf_token %}
+                  <form class="modal-content1 animate">
                     <div class="imgcontainer">
                       <span> ATL Login Form</span>
                       <span onclick="close01()" class="close" title="Close Modal">&times;</span>
@@ -189,7 +188,8 @@ input[type=submit]{
                             <label for="name"><b>Email or number</b></label>
                         </div> 
                         <div class="col-60">
-                          <input type="text" placeholder="Enter Email or number" name="login_id" required>
+                          <input type="text" id = "txtMobile" placeholder="Enter Email or number"  required>
+						 
                         </div>
                     </div><br>
                     <div class="row1">
@@ -197,10 +197,10 @@ input[type=submit]{
                           <label for="name"><b>Password</b></label>
                       </div> 
                       <div class="col-60">
-                        <input type="password" placeholder="Enter Password" name="password" required>
+                        <input type="password" id="txtPassword" placeholder="Enter Password" name="password" required>
                       </div>
                     </div><br>
-                    <input type="submit" id="submit1" value="Login" onclick="nextSP()" >                                    
+                    <input type="submit" onclick="nextSP()" >                                    
                   </form>
                 </div>
 
@@ -341,9 +341,23 @@ function close01()
   document.getElementById('header').style.display ='block';
 }
 function nextSP()
-{
-	alert("helloworld")
-  location.href="/schoolreg/";
+{  
+  var valMobileNum = document.getElementById('txtMobile').value;
+  var valMobilePass = document.getElementById('txtPassword').value;
+  $.ajax({ 
+      type: "GET",
+    url: "/atllogin/",
+    data: {
+	Mobilenumber: valMobileNum,
+	password: valMobilePass	
+},   // <== change is here
+    success: function(msg){
+	console.log(msg)
+	if(msg=="Success"){
+	location.href="/schoolreg/"
+	}
+    }
+});
 }
 function next1()
 {
