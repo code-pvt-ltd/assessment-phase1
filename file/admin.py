@@ -3,14 +3,14 @@ from django.contrib import admin
 
 from .models import PackageOne, Packaget, Packageth, Packagef, schoolatlincharges, aes, \
     teachernominatedforatl, student_login_detail, Atl_login_detail, Questions, table, Answer, Tracker, Response, \
-    AI_Questions, venreg1, moc, Profile, student_login_detail,school_details_atl_incharge
+    AI_Questions, venreg1, moc, Profile, student_login_detail,school_details_atl_incharge,MyLogin
 
 admin.site.register(PackageOne)
 admin.site.register(Packaget)
 admin.site.register(Packageth)
 admin.site.register(Packagef)
 
-
+admin.site.register(MyLogin)
 
 
 

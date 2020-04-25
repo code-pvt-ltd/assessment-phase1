@@ -8,6 +8,8 @@ urlpatterns = [
 
     path("", views.indexpage, name="indexpage"),
     path("choose_school", views.choose_school, name="choose_school"),   # path('student_login/', views.student_login, name="student_login"),
+    path("mylogin/", views.mylogin,name="mylogin"),
+    path("logout/", views.mylogout,name="mylogout"),
     path("atllogin/",views.atllogin,name="atllogin"),
     path("schoolreg/", views.schoolreg, name="schoolreg"),
     path('Package1/', views.Package1, name='Package1'),
@@ -22,7 +24,6 @@ urlpatterns = [
     path("venregweb/", views.venregweb, name="venregweb"),
     path("mentorofchangeweb/", views.mentorofchangeweb, name="mentorofchangeweb"),
     path('question/', views.question, name="question"),
-     path('data/',views.data,name="data"),
-    
+     path('data/',views.data,name="data"),   
     
 ]

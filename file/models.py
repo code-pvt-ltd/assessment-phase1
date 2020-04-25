@@ -1,6 +1,13 @@
 from django.db import models
+from django.forms import ModelForm
 
-
+class MyLogin(models.Model):
+    firstname=models.CharField(max_length=100,blank=True)
+    lastname =models.CharField(max_length=100,blank=True)
+    username = models.CharField(max_length=30,primary_key=True)
+    password = models.CharField(max_length=30,blank=True)
+    def __str__(self):
+        return str(self.username)
 class school_details_atl_incharge(models.Model):
     school_name = models.CharField(max_length=200, blank=True)
     school_reg_id = models.IntegerField(primary_key=True)

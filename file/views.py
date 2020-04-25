@@ -1,20 +1,47 @@
 from django.shortcuts import render, redirect
 from django.template import loader, Context
 from django.contrib.auth.models import User,auth
-
-
+from django.contrib.sessions.models import Session
+from django.template import RequestContext
 from django.urls import reverse
 import sys
+import json
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from file.models import PackageOne, Packaget, Packageth, Packagef, schoolatlincharges, teachernominatedforatl, aes, \
-    student_login_detail, AI_Questions, table, venreg1, moc, Atl_login_detail
+    student_login_detail, AI_Questions, table, venreg1, moc, Atl_login_detail,MyLogin
 
+def mylogout(request):
+    request.session['myuser']=''
+    print(request.session['myuser'])
+    return redirect('/choose_school')
+
+def mylogin(request):
+    myuser='none'
+    if request.method == 'POST':
+        userid=request.POST.get('userid')
+        password=request.POST.get('password')
+        try:
+            if MyLogin.objects.filter(username=userid).exists():
+                db=MyLogin.objects.get(username=userid)
+                if db.username == userid and db.password == password:
+                    myuser=db.firstname
+                    request.session['myuser']=myuser
+                    print(type(myuser))
+                    return render(request,'schoolreg.html',{'myuser':myuser})
+                return HttpResponse("Invalid Credentials")
+        except Exception as e:
+                print(e)
+                HttpResponse("No value Found")  
+    return render(request,'MyLogin.html')
+            
 
 # labregistration page
 def Package1(request):
+    myuser=request.session['myuser']
     if request.method == 'POST':
         sel = request.POST.get('sel')
         other = request.POST.get('other')
@@ -28,10 +55,11 @@ def Package1(request):
             # print(other,scope,days,who)
             return HttpResponseRedirect("/Package1")
         return HttpResponse('invalid')
-    return render(request, 'regi.html')
+    return render(request, 'regi.html',{'myuser':myuser})
 
 
 def Package2(request):
+    myuser=request.session['myuser']
     if request.method == 'POST':
         cel = request.POST.get('cel')
         other = request.POST.get('other')
@@ -44,10 +72,11 @@ def Package2(request):
             pc2.save()
             return HttpResponseRedirect('/Package2')
         return HttpResponse('invalid')
-    return render(request, 'package2.html')
+    return render(request, 'package2.html',{'myuser':myuser})
 
 
 def Package3(request):
+    myuser=request.session['myuser']
     if request.method == 'POST':
         selv = request.POST.get('selv')
         other = request.POST.get('other')
@@ -60,10 +89,11 @@ def Package3(request):
             pc3.save()
             return HttpResponseRedirect('/Package3')
         return HttpResponse('invalid')
-    return render(request, 'package3.html')
+    return render(request, 'package3.html',{'myuser':myuser})
 
 
 def Package4(request):
+    myuser=request.session['myuser']
     if request.method == 'POST':
         self = request.POST.get('self')
         other = request.POST.get('other')
@@ -78,7 +108,7 @@ def Package4(request):
             return HttpResponseRedirect('/Package4')
 
         return HttpResponse('invalid')
-    return render(request, 'package4.html')
+    return render(request, 'package4.html',{'myuser':myuser})
 
 
 def userlogin(request):
@@ -102,7 +132,8 @@ def userlogin(request):
                 db = student_login_detail.objects.get(Mobilenumber=ValMobilenumber)
                 if db.Mobilenumber == ValMobilenumber:
                     if db.Mobilenumber == ValMobilenumber and db.password == Valpassword:
-                        return HttpResponseRedirect("/userlogin", {"username": username})
+                        print("Hii")
+                        return HttpResponseRedirect("/schoolreg", {"username": username})
                     return HttpResponse("Invalid Credentials")
             elif student_login_detail.objects.filter(email=ValMobilenumber).exists():
                 db = student_login_detail.objects.get(email=ValMobilenumber)
@@ -115,32 +146,35 @@ def userlogin(request):
     return render(request, "index1.html")
 
 def atllogin(request):
-
+    
     if request.method == "GET":
         ValMobilenumber = request.GET.get("Mobilenumber")
-        # studentid = request.POST.get("studentid")
-        # username = request.POST.get("username")
         Valpassword = request.GET.get("password")
+        
         try:
 
             if Atl_login_detail.objects.filter(Mobilenumber=ValMobilenumber).exists():
                 
                 db = Atl_login_detail.objects.get(Mobilenumber=ValMobilenumber)
-                if db.Mobilenumber == ValMobilenumber:
-                    if db.Mobilenumber == ValMobilenumber and db.password == Valpassword:
-                        print("Success")
-                        return HttpResponse("Success")
-                    return HttpResponse("Invalid Credentials")
-            elif Atl_login_detail.objects.filter(email=ValMobilenumber).exists():
-                print("Yes Email")
-                db = Atl_login_detail.objects.get(email=ValMobilenumber)
-                if db.email == ValMobilenumber and db.password == Valpassword:
-                    print("Success")
-                    return HttpResponse("Success")
+                global loguser
+                loguser=db.Mobilenumber
+                request.session[loguser]=loguser
+                if db.Mobilenumber == ValMobilenumber and db.password == Valpassword:
+                        print("Hello")
+                        print(loguser)
+                        return HttpResponseRedirect("/schoolreg", {"loguser": loguser})
                 return HttpResponse("Invalid Credentials")
+           # elif Atl_login_detail.objects.filter(email=ValMobilenumber).exists():
+            #    print("Yes Email")
+             #   db = Atl_login_detail.objects.get(email=ValMobilenumber)
+              #  if db.email == ValMobilenumber and db.password == Valpassword:
+               #     print("Success")
+                #    return HttpResponseRedirect("/schoolreg")
+                #return HttpResponse("Invalid")
         except Exception as e:
             print(e)
             return HttpResponse("No Value Found")
+    return render(request,'schoolreg.html')
 
 def indexpage(request):
     return render(request, "index.html" )
@@ -153,14 +187,14 @@ def choose_school(request):
     return render(request,"chooseschoolreg.html")
 
 def schoolreg(request):
-    print("in the schoolreg")
-    return render(request, "schoolreg.html", )
+    request.session[myuser]=myuser
+    return render(request, "schoolreg.html",{'myuser':myuser})
 
-    def schoolreg(request):
-        return render(request, "index2.html")
+    #def schoolreg(request):
+      #  return render(request, "index2.html")
 
-    def schoolreg(request):
-        return render(request, "index3.html")
+    #def schoolreg(request):
+        #return render(request, "index3.html")
 
 
 def atl_login(request):
@@ -168,14 +202,17 @@ def atl_login(request):
 
 
 def vendorreg(request):
-    return render(request, "vendor.html")
+    myuser=request.session['myuser']
+    return render(request, "vendor.html",{'myuser':myuser})
 
 
 def mentorofchange(request):
-    return render(request, "mentorofchange.html")
+    myuser=request.session['myuser']
+    return render(request, "mentorofchange.html",{'myuser':myuser})
 
 
 def school_details_atl_incharge(request):
+    myuser=request.session['myuser']
     if request.method == "POST":
         school_name = request.POST.get("school_name")
         school_reg_id = request.POST.get("school_reg_id")
@@ -199,10 +236,11 @@ def school_details_atl_incharge(request):
             print(e)
 
             return HttpResponse("Error")
-    return render(request, "index1.html")
+    return render(request, "index1.html",{'myuser':myuser})
 
 
 def schoolatlinchargeweb(request):
+    myuser=request.session['myuser']
     if request.method == "POST":
         valpersonname = request.POST.get("personname")
         valpersonID = request.POST.get("personID")
@@ -217,10 +255,11 @@ def schoolatlinchargeweb(request):
         except Exception as e:
             print(e)
             return HttpResponse("invaliduser")
-    return render(request, "index2.html")
+    return render(request, "index2.html",{'myuser':myuser})
 
 
 def AESWeb(request):
+    myuser=request.session['myuser']
     if request.method == "POST":
         option1 = request.POST.get("option1")
         date1 = request.POST.get("date1")
@@ -239,10 +278,11 @@ def AESWeb(request):
             return HttpResponseRedirect("/AESWeb/")
         except Exception as e:
             return HttpResponse("Invalid......")
-    return render(request, "index3.html")
+    return render(request, "index3.html",{'myuser':myuser})
 
 
 def TNFA(request):
+    myuser=request.session['myuser']
     if request.method == "POST":
         vname = request.POST.get("name")
         vphone = request.POST.get("number")
@@ -253,7 +293,7 @@ def TNFA(request):
             return HttpResponseRedirect("/TNFA/")
         except Exception as e:
             return HttpResponse("invaliduserpass")
-    return render(request, "index4.html")
+    return render(request, "index4.html",{'myuser':myuser})
 
 
 def question(request):
@@ -281,6 +321,7 @@ def data(request):
 
 
 def venregweb(request):
+    myuser=request.session['myuser']
     if request.method == "POST":
         GEM = request.POST.get("order")
         GEMordernumber = request.POST.get("gemorderno")
@@ -307,10 +348,11 @@ def venregweb(request):
             return HttpResponseRedirect("/schoolreg/")
         except Exception as e:
             return HttpResponse("Invalidreg")
-    return render(request, "vendor.html")
+    return render(request, "vendor.html",{'myuser':myuser})
 
 
 def mentorofchangeweb(request):
+    myuser=request.session['myuser']
     if request.method == "POST":
         NameofMentor = request.POST.get("name")
         MentorID = request.POST.get("mentorid")
@@ -333,4 +375,4 @@ def mentorofchangeweb(request):
                   Howmanydaysdoesshehevisitsschools=Howmanydaysdoesshehevisitsschools,
                   Specializationandskills=Specializationandskills)
         val.save()
-    return render(request, "mentorofchange.html")
+    return render(request, "mentorofchange.html",{'myuser':myuser})
